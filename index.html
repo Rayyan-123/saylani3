@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Car Image Generator</title>
+    <style>
+        #carImage {
+            max-width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <h1>Random Car Image Generator</h1>
+    <img id="carImage" src="" alt="Random Car Image" style="display:none;">
+    <button onclick="generateRandomCarImage()">Generate Random Car Image</button>
+
+    <script>
+        const carImages = [
+            "https://cdn.pixabay.com/photo/2012/04/12/23/47/car-30984_1280.png",
+            "https://img.lovepik.com/photo/48007/1912.jpg_wh860.jpg",
+            "https://www.usnews.com/object/image/00000191-d821-d8b8-adf7-f97944b10000/chevrolet-corvette-zr1-coupe-001.jpg?update-time=1725907944302&size=responsiveGallery",
+            "https://images.pexels.com/photos/35967/mini-cooper-auto-model-vehicle.jpg?cs=srgb&dl=pexels-pixabay-35967.jpg&fm=jpg",
+            "https://imageio.forbes.com/specials-images/imageserve/5d35eacaf1176b0008974b54/0x0.jpg?format=jpg&crop=4560,2565,x790,y784,safe&height=900&width=1600&fit=bounds"
+        ];
+
+        function generateRandomCarImage() {
+            const randomIndex = Math.floor(Math.random() * carImages.length);
+            const carImageElement = document.getElementById('carImage');
+            carImageElement.src = carImages[randomIndex];
+            carImageElement.style.display = 'block';
+        }
+    </script>
+</body>
+</html>
